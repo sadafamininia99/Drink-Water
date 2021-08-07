@@ -1,6 +1,7 @@
 # Drink-Water
 Goal 2 liters per Day
+THis project is made by Html ,Css and JavaScript 😍😍🧡
 
-<p align="center>"
+
+## Demo 
 ![Screenshot](drink-water.png)
-</p>
