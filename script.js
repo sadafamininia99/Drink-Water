@@ -1,28 +1,29 @@
-const smallcups = document.querySelectorAll('.cup-small');
+const smallCups = document.querySelectorAll('.cup-small')
+const liters = document.getElementById('liters')
+const percentage = document.getElementById('percentage')
+const remained = document.getElementById('remained')
 
-const Liters = document.getElementById('liters');
 
-const percentage = document.getElementById('percentage');
 
-const remaind = document.getElementById('remaind');
-//Get
-
-smallcups.forEach((cup, idx) =>{
-    // console.log(idx);
-    cup.addEventListener('click', () => highlightcups(idx))
+smallCups.forEach((cup, idx) => {
+    cup.addEventListener('click', () => highlightCups(idx))
 })
 
-function highlightcups(idx){
-    // console.log(idx);
-    //add full class (html (color =blue))
-    smallcups.forEach(() =>(cup,idx2) => 
-    {
-        if(idx2 <= idx){
-            cup.classList.add('.full')
 
-        }
-        else{
-            cup.classList.remove('.full')
+
+function highlightCups(idx) {
+    if (idx===7 && smallCups[idx].classList.contains("full")) idx--;
+    else if(smallCups[idx].classList.contains('full') && !smallCups[idx].nextElementSibling.classList.contains('full')) {
+        idx--
+    }
+
+    smallCups.forEach((cup, idx2) => {
+        if(idx2 <= idx) {
+            cup.classList.add('full')
+        } else {
+            cup.classList.remove('full')
         }
     })
+
+   
 }
